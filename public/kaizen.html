@@ -78,6 +78,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <style id="kaizenspark-overrides">
         /* KaizenSpark structural overrides - hero, cards, footer, typography */
+        /* Footer layout — stable desktop structure */
+        .footer .container.is--md-m {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 40px;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        .footer-top__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+        .footer-top__links {
+            flex: 2;
+            min-width: 0;
+        }
+        .footer-top__buttons {
+            flex: 1.2;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .footer-bottom__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .footer-bottom__logo {
+            flex-shrink: 0;
+        }
+        .footer-bottom__details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+        .footer-bottom__legal-list {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .footer-bottom__details-col.is--end {
+            text-align: right;
+        }
         .home-hero__content {
             display: flex;
             flex-direction: column;
@@ -1778,7 +1833,7 @@
                         <span class="h-l is--reel-h">Play</span>
                         <div class="reel__content-center">
                             <div data-reel-visual="" class="reel__visual">
-                                <video muted="" loop="" webkit-playsinline="" src="index.html" playsinline="" data-video-lazy="" data-video-src="https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb%2F670e5ef201603b3a7dda3aa9_Osmo-V12-Reel-Tiny_compressed-transcode.mp4" data-video-status="not-loaded" class="cover-video"></video>
+                                <video muted="" loop="" webkit-playsinline="" playsinline="" data-video-lazy="" data-video-src="https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb%2F670e5ef201603b3a7dda3aa9_Osmo-V12-Reel-Tiny_compressed-transcode.mp4" data-video-status="not-loaded" class="cover-video"></video>
                                 <div data-reel-visual-text="" class="reel__visual-text">
                                     <p class="p-m">Our Story</p>
                                     <p class="p-m">00:48</p>
@@ -1962,7 +2017,7 @@
                                                     <div class="resource-card__end">
                                                         <div class="resource-visual">
                                                             <div class="resource-visual__before"></div>
-                                                            <video muted="" loop="" webkit-playsinline="" src="index.html" playsinline="" data-video-lazy="" data-video-src="" data-video-status="not-loaded" class="cover-video"></video>
+                                                            <video muted="" loop="" webkit-playsinline="" playsinline="" data-video-lazy="" data-video-src="" data-video-status="not-loaded" class="cover-video"></video>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3261,7 +3316,7 @@ Deliverables
                                             <div class="used-resource-card__media">
                                                 <div class="used-resource-card__media-before"></div>
                                                 <img src="https://cdn.prod.website-files.com/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" data-res-used="item-img" alt="" class="used-resource-card__media-img"/>
-                                                <video muted="" loop="" webkit-playsinline="" playsinline="" src="index.html" data-res-used-video="" data-res-used="item-video" class="used-resource-card__media-video"></video>
+                                                <video muted="" loop="" webkit-playsinline="" playsinline="" data-res-used-video="" data-res-used="item-video" class="used-resource-card__media-video"></video>
                                             </div>
                                             <a target="_blank" data-res-used="item-link" data-barba-p="true" href="index.html#" class="used-resource-card__click w-inline-block"></a>
                                         </div>
@@ -4105,6 +4160,9 @@ Deliverables
                 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.1/dist/lenis.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.11"></script>
+                <script>
+                    window.Outseta = window.Outseta || {};
+                </script>
                 <script src="https://slater.app/16596/55554.js"></script>
                 <!--marketing.min.js-->
                 <!--<script src="https://slater.app/16596/45422.js"></script> marketing staging -->
