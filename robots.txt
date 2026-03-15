@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /
+
+Allow: /$
+Allow: /product/
+Allow: /plans/
+Allow: /collection
+Allow: /updates
+Allow: /showcase
+Allow: /submit
+Allow: /try
+Allow: /faq
+Allow: /login
+Allow: /newsletter
+Allow: /legal/
+
+Sitemap: https://www.osmo.supply/sitemap.xml
