@@ -18,7 +18,9 @@ export default function Home() {
       })
       .then((text) => {
         if (!cancelled) {
-          setHtml(text);
+          const match = text.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+          const bodyContent = match ? match[1] : text;
+          setHtml(bodyContent);
         }
       })
       .catch((err) => {
