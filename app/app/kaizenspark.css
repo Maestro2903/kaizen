@@ -1,5 +1,14 @@
 
         /* KaizenSpark structural overrides - hero, cards, footer, typography */
+        /* STEP 1+3 — footer as positioning parent for background word */
+        .footer {
+            position: relative;
+            width: 100%;
+            z-index: 2;
+            overflow: hidden;
+            padding-top: 120px;
+            padding-bottom: 40px;
+        }
         /* Footer layout — stable desktop structure */
         .footer .container.is--md-m {
             max-width: 1200px;
@@ -40,6 +49,38 @@
         .footer-bottom__logo {
             flex-shrink: 0;
         }
+        /* About modal footer logo — keep centered and visible */
+        .modal-footer {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding-top: 2.5rem !important;
+            padding-bottom: 2.5rem !important;
+            text-align: center !important;
+        }
+        .about-footer__logo,
+        [data-footer-logo] {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            overflow: visible !important;
+            position: static !important;
+            transform: none !important;
+            left: auto !important;
+            right: auto !important;
+            top: auto !important;
+        }
+        .about-footer__logo .footer-bottom__logo-svg,
+        [data-footer-logo] .footer-bottom__logo-svg {
+            display: block !important;
+            margin: 0 auto !important;
+            width: min(82vw, 260px) !important;
+            max-width: 260px !important;
+            height: auto !important;
+        }
         .footer-bottom__details {
             display: flex;
             justify-content: space-between;
@@ -65,6 +106,51 @@
             gap: 0;
             padding-top: 160px;
             padding-bottom: 80px;
+        }
+        /* STEP 3 — footer background typography behind everything */
+        .footer-background-word,
+        .background-word,
+        .foottext,
+        .big-footer-text {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(200px, 25vw, 600px);
+            line-height: 0.8;
+            white-space: nowrap;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Ensure footer KAIZEN SVG is visually centered */
+        .footer-bottom__row {
+            position: relative !important;
+        }
+        .footer-bottom__logo.footer-background-word,
+        [data-footer-logo-wrap].footer-background-word {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            pointer-events: none !important;
+        }
+        .footer-bottom__logo.footer-background-word .footer-bottom__logo-svg,
+        [data-footer-logo-wrap].footer-background-word .footer-bottom__logo-svg {
+            display: block !important;
+            margin: 0 auto !important;
+            width: min(80vw, 640px) !important;
+            max-width: 640px !important;
+            height: auto !important;
+        }
+        /* STEP 4 — keep footer content above background typography if used */
+        .footer-content {
+            position: relative;
+            z-index: 2;
         }
         .hero-eyebrow {
             font-size: 0.75rem;
@@ -480,8 +566,7 @@
         }
 
         /* Section spacing — consistent padding between sections, fix odd gaps */
-        main.main > section,
-        main.main > footer.footer {
+        main.main > section {
             padding-top: 4rem !important;
             padding-bottom: 4rem !important;
         }
@@ -496,10 +581,7 @@
             padding-top: 4rem !important;
             padding-bottom: 4rem !important;
         }
-        main.main > footer.footer {
-            padding-top: 3rem !important;
-            padding-bottom: 2rem !important;
-        }
+        /* Footer spacing now controlled by explicit footer rules above */
 
         /* Shapes section — prevent clipping of "Built to Scale" and scribble text */
         .shapes-section {
@@ -529,7 +611,7 @@
 
         /* ─── RESPONSIVE ────────────────────────────────────────────────────── */
 
-        /* Global overflow protection */
+        /* STEP 5 — Global overflow protection (prevent footer text causing scroll) */
         body {
             overflow-x: hidden;
         }

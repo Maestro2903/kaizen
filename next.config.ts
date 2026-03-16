@@ -1,16 +1,10 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: __dirname,
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
-      },
-    ],
+    // Explicitly set Turbopack root to this app directory
+    root: path.join(__dirname),
   },
 };
 
