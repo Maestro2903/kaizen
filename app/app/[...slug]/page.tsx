@@ -1,11 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Page',
-};
 
 export default function CatchAllPage() {
   const [html, setHtml] = useState<string | null>(null);

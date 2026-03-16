@@ -2,11 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Home',
-};
 
 export default function Home() {
   const [html, setHtml] = useState<string | null>(null);
