@@ -1,6 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Script from 'next/script';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home',
+};
 
 export default function Home() {
   const [html, setHtml] = useState<string | null>(null);
@@ -50,9 +56,29 @@ export default function Home() {
   }
 
   return (
-    <main
-      className="min-h-screen"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <>
+      <Script
+        id="organization-json-ld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "KaizenSpark Tech",
+            url: "https://kaizenspark.com",
+            logo: "https://kaizenspark.com/logo.png",
+            sameAs: ["https://linkedin.com/company/kaizenspark"],
+            description:
+              "KaizenSpark Tech builds websites, AI automation systems, and scalable digital platforms.",
+          }),
+        }}
+      />
+      <main
+        className="min-h-screen"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </>
   );
 }
+

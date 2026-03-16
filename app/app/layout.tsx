@@ -13,9 +13,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KaizenSpark Tech — Technology & Digital Solutions",
+  metadataBase: new URL("https://kaizenspark.com"),
+  title: {
+    default: "KaizenSpark Tech",
+    template: "%s | KaizenSpark Tech",
+  },
   description:
-    "KaizenSpark Tech helps businesses launch powerful websites, AI systems, and digital marketing engines with full-stack development and growth strategies.",
+    "KaizenSpark Tech builds powerful websites, AI automation systems, and scalable digital products for startups and growing businesses.",
+  keywords: [
+    "AI automation",
+    "web development agency",
+    "startup technology partner",
+    "AI product development",
+    "cloud and devops",
+    "automation systems",
+    "digital engineering",
+  ],
+  creator: "KaizenSpark Tech",
+  openGraph: {
+    title: "KaizenSpark Tech",
+    description:
+      "Build websites, automate workflows, and scale your business with KaizenSpark Tech.",
+    url: "https://kaizenspark.com",
+    siteName: "KaizenSpark",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KaizenSpark Tech",
+    description:
+      "Build websites, automate workflows, and grow your business.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
